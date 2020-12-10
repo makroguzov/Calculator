@@ -8,6 +8,22 @@
 #import <Foundation/Foundation.h>
 
 
+
+BOOL isEnglishLetter(char letter) {
+    return (letter >= 0x41 && letter <= 0x5A) || (letter >= 0x61 && letter <= 0x7A);
+}
+
+void checkLetter() {
+    
+    char letter;
+    
+    printf("Enter english letter: ");
+    scanf("%c", &letter);
+    
+    NSLog(isEnglishLetter(letter) ? @"You right, this is english letter." : @"Dont try to deceive me!!!");
+}
+
+
 double summ(int v1, int v2) {
     return v1 + v2;
 }
@@ -78,7 +94,8 @@ void startCalcApp() {
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        startCalcApp();
+        //startCalcApp();
+        checkLetter();
     }
     return 0;
 }
