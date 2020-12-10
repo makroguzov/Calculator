@@ -55,6 +55,7 @@ void startCalcApp() {
     NSLog(@"%i %c %i = %f", firstVal, operation, secondVal, result);
 }
 
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         startCalcApp();
