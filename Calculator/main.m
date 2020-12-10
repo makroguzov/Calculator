@@ -8,31 +8,52 @@
 #import <Foundation/Foundation.h>
 
 
+double summ(int v1, int v2) {
+    return v1 + v2;
+}
+
+double multiply(int v1, int v2) {
+    return v1 * v2;
+}
+
+double difference(int v1, int v2) {
+    return v1 - v2;
+}
+
+double mod(int v1, int v2) {
+    return v1 % v2;
+}
+
+double division(int v1, int v2) {
+    return v1 / v2;
+}
+
 double compute(int v1, int v2, char op) {
     switch (op) {
         case '*':
-            return v1 * v2;
+            return multiply(v1, v2);
             break;
             
         case '/':
-            return v1 / v2;
+            return division(v1, v2);
             break;
             
         case '%':
-            return v1 % v2;
+            return mod(v1, v2);
             break;
             
         case '+':
-            return v1 + v2;
+            return summ(v1, v2);
             
         case '-':
-            return v1 - v2;
+            return difference(v1, v2);
         
         default:
             return 0;
             break;
     }
 }
+
 
 void startCalcApp() {
     
@@ -54,7 +75,6 @@ void startCalcApp() {
     
     NSLog(@"%i %c %i = %f", firstVal, operation, secondVal, result);
 }
-
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
