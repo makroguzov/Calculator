@@ -8,31 +8,68 @@
 #import <Foundation/Foundation.h>
 
 
+
+BOOL isEnglishLetter(char letter) {
+    return (letter >= 0x41 && letter <= 0x5A) || (letter >= 0x61 && letter <= 0x7A);
+}
+
+void checkLetter() {
+    
+    char letter;
+    
+    printf("Enter english letter: ");
+    scanf("%c", &letter);
+    
+    NSLog(isEnglishLetter(letter) ? @"You right, this is english letter." : @"Dont try to deceive me!!!");
+}
+
+
+double summ(int v1, int v2) {
+    return v1 + v2;
+}
+
+double multiply(int v1, int v2) {
+    return v1 * v2;
+}
+
+double difference(int v1, int v2) {
+    return v1 - v2;
+}
+
+double mod(int v1, int v2) {
+    return v1 % v2;
+}
+
+double division(int v1, int v2) {
+    return v1 / v2;
+}
+
 double compute(int v1, int v2, char op) {
     switch (op) {
         case '*':
-            return v1 * v2;
+            return multiply(v1, v2);
             break;
             
         case '/':
-            return v1 / v2;
+            return division(v1, v2);
             break;
             
         case '%':
-            return v1 % v2;
+            return mod(v1, v2);
             break;
             
         case '+':
-            return v1 + v2;
+            return summ(v1, v2);
             
         case '-':
-            return v1 - v2;
+            return difference(v1, v2);
         
         default:
             return 0;
             break;
     }
 }
+
 
 void startCalcApp() {
     
@@ -57,7 +94,8 @@ void startCalcApp() {
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        startCalcApp();
+        //startCalcApp();
+        checkLetter();
     }
     return 0;
 }
